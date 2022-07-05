@@ -15,7 +15,7 @@ import Remote.IDictionary;
 //implementation of the interface
 public class DictionaryService extends UnicastRemoteObject implements IDictionary {
 
-    static String file = "src/Server/dictionary.json";
+    static String file = "/Users/liuyuelin/Code/Java/RMI_Dictionary/RMI_Dictionary/src/Server/dictionary.json";
 
     protected DictionaryService() throws RemoteException {
         super();
@@ -60,6 +60,7 @@ public class DictionaryService extends UnicastRemoteObject implements IDictionar
         return result;
     }
 
+    //add(): put(message[0],message[1])
     @Override
     public String add(String message) throws RemoteException {
         JSONParser myParser = new JSONParser();

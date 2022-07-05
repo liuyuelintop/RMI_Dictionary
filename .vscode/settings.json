@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "RMI_Dictionary/lib/json-simple-1.1.1.jar"
+    ]
+}

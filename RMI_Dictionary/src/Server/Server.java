@@ -1,7 +1,6 @@
 package Server;
-import java.rmi.registry.Registry;
-
 import Remote.IDictionary;
+import Remote.IDictionaryGUI;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
@@ -14,8 +13,10 @@ public class Server {
             int port = Integer.parseInt(args[1]);
             try {
                 IDictionary dService = new DictionaryService();
+                IDictionaryGUI dictionaryGUI = new DictionaryGUI();
                 LocateRegistry.createRegistry(port);
                 Naming.rebind(String.format("rmi://%s:%d/dictionary", ipAddress,port), dService);
+                Naming.rebind(String.format("rmi://%s:%d/dictionaryGUI", ipAddress,port), dictionaryGUI);
                 System.out.printf("start server, port is %d\n", port);
             } catch (Exception e) {
                 e.printStackTrace();
